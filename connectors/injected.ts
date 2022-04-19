@@ -7,7 +7,7 @@ export default class Connector extends LockConnector {
       provider = window['ethereum'];
       try {
         await window['ethereum'].enable();
-      } catch (e) {
+      } catch (e: any) {
         console.error(e);
         if (e.code === 4001) return;
       }

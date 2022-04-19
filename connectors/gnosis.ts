@@ -20,6 +20,7 @@ export default class Connector extends LockConnector {
       const sdk = new SafeAppsSDK();
       const safe = await sdk.safe.getInfo();
       const SafeAppProvider = (await getProvider()).default.SafeAppProvider;
+      // @ts-ignore
       provider = new SafeAppProvider(safe, sdk);
     } catch (e) {
       console.error(e);
